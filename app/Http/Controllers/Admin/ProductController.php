@@ -20,6 +20,7 @@ class ProductController extends Controller
 		return view('backend.addproduct')->with('data',$data);
 	}
 	public function postAddproduct(AddproductRequest $request){
+
 		$product = new Product;
 		$filename=$request->img->getClientOriginalName();
 		$product->name=$request->name;
@@ -70,6 +71,9 @@ class ProductController extends Controller
 	public function getDeleteproduct($id){
 		Product::destroy($id);
 		return back();
+	}
+	public function getABC(){
+
 	}
 
 }
